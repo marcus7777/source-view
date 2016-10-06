@@ -11,7 +11,7 @@
   <template>
     <a on-tap="open">&lt;/></a>
     <template is="dom-if" if="{{opened}}">
-      <iron-ajax auto url="{{url}}" on-response="{{fit}}" handle-as="text" last-response="{{text}}" debounce-duration="300"></iron-ajax>
+      <iron-ajax auto url="{{url}}" on-response="fit" handle-as="text" last-response="{{text}}" debounce-duration="300"></iron-ajax>
       <prism-highlighter></prism-highlighter>
       <paper-dialog opened="{{opened}}">
         <paper-dialog-scrollable>
