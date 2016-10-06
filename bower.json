@@ -1,0 +1,17 @@
+{
+  "name": "source-view",
+  "version": "1.0.0",
+  "description": "a source view dialog box",
+  "main": "source-view.html",
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "dependencies": {
+    "iron-ajax": "PolymerElements/iron-ajax#97685a88f7",
+    "prism-element": "PolymerElements/prism-element#~1.1.1",
+    "marked-element": "PolymerElements/marked-element#~1.1.3",
+    "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#~1.1.5",
+    "paper-dialog": "PolymerElements/paper-dialog#7f31fa918f"
+  }
+}

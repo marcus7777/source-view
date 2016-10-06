@@ -1,0 +1,32 @@
+<link rel="import" href="../paper-dialog/paper-dialog.html">
+<link rel="import" href="../paper-dialog-scrollable/paper-dialog-scrollable.html">
+<link rel="import" href="../marked-element/marked-element.html">
+<link rel="import" href="../prism-element/prism-highlighter.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+<!--
+  `<source-view></source-view>` a source view dialog box
+  @demo demo.html
+-->
+<dom-module id="source-view">
+  <template>
+    <a on-tap="open">&lt;/></a>
+    <template is="dom-if" if="{{opened}}">
+      <iron-ajax auto url="{{url}}" handle-as="text" last-response="{{text}}" debounce-duration="300"></iron-ajax>
+      <prism-highlighter></prism-highlighter>
+      <paper-dialog opened="{{opened}}">
+        <paper-dialog-scrollable>
+          <marked-element markdown="```html
+    {{text}}```" ></marked-element>
+        </paper-dialog-scrollable>
+      </paper-dialog>
+    </template>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "source-view",
+    open: function(undefined){
+      this.opened = true
+    },
+  })
+</script>
